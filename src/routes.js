@@ -31,3 +31,6 @@ routes.get('/clients', () => {
 routes.get('/transactions', () => {
     console.log('The transactions was retrieved')
 })
+
+// exporting module
+exports.Routes = routes
