@@ -1,0 +1,12 @@
+{
+  "name": "Challenge-Payment-System-Api-",
+  "version": "1.0.0",
+  "description": "A simple payment system api",
+  "main": "src/server.js",
+  "repository": "https://github.com/messiasGeovani/Challenge-Payment-System-Api-.git",
+  "author": "messiasGeovani <messias.geovani.lima@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
