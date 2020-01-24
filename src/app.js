@@ -2,10 +2,13 @@
  * App module
  */
 
+// database connection
+require('./config/database')
+
 //  express config
 const Express = require('express')
 // cors config
-const cors = rqeuire('cors')
+const cors = require('cors')
 // routes config
 const { Routes } = require('./routes')
 

@@ -36,7 +36,9 @@ routes.get('/clients', (req, res) => {
 //  transactions recovery route
 routes.get('/transactions', (req, res) => {
     return res.json({
-        message: 'A transaction was retrieved'
+        sender: 'teste',
+        destination: 'teste',
+        valor: 12
     })
 })
 
