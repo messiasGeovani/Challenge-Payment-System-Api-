@@ -8,39 +8,45 @@ const Express = require('express')
 // router config
 const routes = Express.Router()
 
+// client controller import
+const { ClientController } = require('./App/controllers/ClientController')
+
+// transaction controller import
+const { TransactionController } = require('./App/controllers/TransactionController')
+
 /**
  * Creaing the routes
  */
 
 //  clients creation route
-routes.post('/client', (req, res) => {
-    return res.json({
-        message: 'A client was created'
-    })
-})
+routes.post('/client', ClientController.store)
 
-//  transactions creation route
-routes.post('/transaction', (req, res) => {
-    return res.json({
-        message: 'A transaction was created'
-    })
-})
+//  clients index route
+routes.get('/clients', ClientController.index)
 
-//  clients recovery route
-routes.get('/clients', (req, res) => {
-    return res.json({
-        message: 'A client was retrieved'
-    })
-})
+//  clients show route
+routes.get('/client', ClientController.show)
 
-//  transactions recovery route
-routes.get('/transactions', (req, res) => {
-    return res.json({
-        sender: 'teste',
-        destination: 'teste',
-        valor: 12
-    })
-})
+//  clients update route
+routes.put('/client', ClientController.edit)
+
+//  client delete route
+routes.delete('/client', ClientController.remove)
+
+//  transaction creation route
+routes.post('/transaction', TransactionController.store)
+
+//  transaction index route
+routes.get('/transactions', TransactionController.index)
+
+//  transaction show route
+routes.get('/transaction', TransactionController.show)
+
+//  transaction update route
+routes.put('/transaction', TransactionController.edit)
+
+//  transaction delete route
+routes.delete('/transaction', TransactionController.remove)
 
 // exporting module
 exports.Routes = routes
