@@ -27,8 +27,8 @@ exports.ClientController = {
     },
 
     async show(req, res) {
-        const client = await Client.findById(req.query.id).exec()
-        await client.save().then(result => {
+        await Client.findOne({ name: req.query.name }).exec()
+        .then(result => {
             return res.status(200).json(result)
         }).catch(err => {
             return res.status(500).json(err)

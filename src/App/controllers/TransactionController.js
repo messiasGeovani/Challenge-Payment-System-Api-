@@ -27,12 +27,12 @@ exports.TransactionController = {
     },
 
     async show(req, res) {
-        const transaction = await Transaction.findById(req.query.id).exec()
-        await transaction.save().then(result => {
-            return res.status(200).json(result)
-        }).catch(err => {
-            return res.status(500).json(err)
-        })
+        await Transaction.findOne({ sender: req.query.name }).exec()
+            .then(result => {
+                return res.status(200).json(result)
+            }).catch(err => {
+                return res.status(500).json(err)
+            })
     },
 
     async edit(req, res) {
